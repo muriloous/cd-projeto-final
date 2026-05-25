@@ -1,0 +1,37 @@
+{
+  "build_date": "2026-05-24T22:52:39.256220",
+  "anos": [
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "ufs_alvo": [
+    "MT",
+    "PR",
+    "RS",
+    "GO",
+    "MS",
+    "MG",
+    "SP",
+    "BA",
+    "TO",
+    "MA",
+    "PA",
+    "ES"
+  ],
+  "culturas": [
+    "Soja (em grão)",
+    "Milho (em grão)",
+    "Café (em grão) Total"
+  ],
+  "linhas_mensal": 720,
+  "linhas_anual": 180,
+  "fontes": {
+    "clima": "INMET - Instituto Nacional de Meteorologia (portal.inmet.gov.br/dadoshistoricos)",
+    "producao": "IBGE - SIDRA Tabela 5457 (Produção Agrícola Municipal)",
+    "ipca": "IBGE - SIDRA Tabela 7060 (IPCA Alimentação e Bebidas por Região Metropolitana)",
+    "geojson": "codeforgermany/click_that_hood (github.com)"
+  }
+}
