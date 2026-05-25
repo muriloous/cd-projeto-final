@@ -8,10 +8,6 @@ O Brasil é um dos maiores produtores mundiais de soja, milho e café — cultur
 
 Este projeto investiga empiricamente essa cadeia causal usando dados públicos do **INMET** (Instituto Nacional de Meteorologia) e do **IBGE/SIDRA**, aplicando técnicas de séries temporais, correlação de Pearson e análise de defasagem (lag).
 
-## Equipe
-
-- WellingtonTorres
-
 ## Fontes de Dados
 
 | Fonte | Dados | Tabela/Endpoint |
