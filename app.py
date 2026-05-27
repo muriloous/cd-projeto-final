@@ -448,12 +448,13 @@ with tabs[4]:
         sem_dados()
     else:
         # ── 5.1 Scatter clima × produção ────────────────────────────────────
-        st.subheader("1. Anomalia de Chuva na Safra × Quantidade Produzida")
+        st.subheader("1. Clima na Safra × Quantidade Produzida")
         st.markdown(
-            "Cada ponto é um UF-ano. A reta de tendência (OLS) indica a direção da relação: "
-            "mais chuva na safra → mais produção?"
+            "Cada ponto é um UF-ano. As retas de tendência (OLS) ajudam a identificar como "
+            "variáveis de chuva e temperatura na safra impactam a produção agrícola."
         )
 
+        st.subheader("Chuva na Safra × Produção")
         if "anomalia_chuva_safra" in df_a.columns and "qtd_t" in df_a.columns:
             fig_scatter = scatter_correlacao(
                 df_a.dropna(subset=["anomalia_chuva_safra", "qtd_t"]),
@@ -466,6 +467,22 @@ with tabs[4]:
         else:
             st.info(
                 "Coluna `anomalia_chuva_safra` não encontrada. "
+                "Verifique se o ETL foi executado com dados INMET disponíveis."
+            )
+
+        st.subheader("Temperatura Média na Safra × Produção")
+        if "temp_c_safra" in df_a.columns and "qtd_t" in df_a.columns:
+            fig_scatter_temp = scatter_correlacao(
+                df_a.dropna(subset=["temp_c_safra", "qtd_t"]),
+                x="temp_c_safra", y="qtd_t", color="uf",
+                title=f"Temperatura Média na Safra vs Produção — {cultura_sel.split()[0]}",
+                xlab="Temperatura Média na Safra (°C)",
+                ylab="Quantidade Produzida (t)",
+            )
+            st.plotly_chart(fig_scatter_temp, use_container_width=True)
+        else:
+            st.info(
+                "Coluna `temp_c_safra` não encontrada. "
                 "Verifique se o ETL foi executado com dados INMET disponíveis."
             )
 
